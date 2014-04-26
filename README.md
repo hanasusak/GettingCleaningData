@@ -3,13 +3,11 @@ GettingCleaningData
 
 Getting and Cleaning Data | Peer Assessment
 
-###  IMPORTANT NOTES
+## IMPORTANT NOTES
 
 * fread was not used to read files as it was reporting problem with positioning. There was several reports on the web with same mistake, where this problem was listed as bug which will be fixed in next versions of data.table package.
 * For second task, subseting mean and std columns assumtion was mead that only columns having mean() and std() in their name are the ones which need to be kept.
 
-
-### The raw data
 
 
 ### The raw data
