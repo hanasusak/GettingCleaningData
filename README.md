@@ -9,7 +9,8 @@ IMPORTANT NOTES
 * For first task assumption was made that information from 6 files (X_train.txt, y_train.txt, subject_train.txt , X_test.txt, y_test.txt and subject_test.txt) need to be correctly combined in one file.
 * For second task, sub-selecting mean and std columns assumption was mead that only columns having _mean()_ and _std()_ in their name are the ones which need to be kept.
 * Due to the ambiguity and similarity of task 3 and 4 next assumption was made:   
-descriptiv column for acitivity is added, and all numeric columns were given names provided in file __features.txt__. Original column with activity code is also kept (if not needed it is easy to discard it). In code book full description of features can be found. 
+descriptiv column for acitivity is added, and all numeric columns were given names provided in file __features.txt__. In code book full description of features can be found. 
+* data.table package was used to speed up operations
 * fread was not used to read files as it was reporting problem with positioning. There was several reports on the web with same error, where this problem was listed as bug which will be fixed in next versions of _data.table_ package. 
 
 
@@ -20,12 +21,10 @@ Descriptions and README files are also provided with raw data.
 
 ### The tidy data set and the code book
 The tidy data set is in folder **Tidy_Data**. 
-Code book for tidy data can be found in file *CodeBook.Rmd*.  
+Code book for tidy data can be found in file *CodeBook.md*.  
 Additional informaton about tidy data can be found in this file or in code book.  
 
-
 ### How to code variables
-
 
 * Tidy data have 68 columns and 180 rows plus 1 row (first) for column names. File name is __tidy_data.txt__.   
 * Each row represent one combination of subject and activity (6x30)
@@ -52,6 +51,8 @@ All code needed for reproducing tidy data set is in __run_analysis.R__ file.
 
 Feature Selection (copy from row data)
 =================
+
+_Description of variables used for geting mean when grouped by activity and subject._
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
